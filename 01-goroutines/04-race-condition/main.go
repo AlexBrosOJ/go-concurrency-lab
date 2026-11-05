@@ -13,13 +13,16 @@ func main() {
 
 	var counter int
 	var wg sync.WaitGroup
+	//var mu sync.Mutex
 
 	wg.Add(workers)
 
 	for i := 0; i < workers; i++ {
 		go func() {
 			defer wg.Done()
+			//defer mu.Unlock()
 
+			//mu.Lock()
 			for j := 0; j < incrementsEach; j++ {
 				counter++
 			}

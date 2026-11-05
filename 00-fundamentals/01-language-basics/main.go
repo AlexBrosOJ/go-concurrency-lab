@@ -35,7 +35,7 @@ func main() {
 	//Базовые типы и приведение типов
 
 	var count int = 10
-	var ratio float64 = float64(count) / 4
+	var ratio float64 = float64(count) / 3
 
 	fmt.Println("Count, Ratio:", count, ratio)
 
