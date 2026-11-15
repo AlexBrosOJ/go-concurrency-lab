@@ -8,12 +8,12 @@ import (
 func printNumbers(workerID int) {
 	for i := 1; i <= 5; i++ {
 		fmt.Printf("Worker %d: %d\n", workerID, i)
-		time.Sleep(100 * time.Microsecond)
+		time.Sleep(100 * time.Millisecond)
 	}
 }
 
 func main() {
-	fmt.Println("Main: statred")
+	fmt.Println("Main: started")
 
 	go printNumbers(1)
 	go printNumbers(2)

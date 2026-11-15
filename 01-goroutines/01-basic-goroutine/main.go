@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	fmt.Println("Main: statred")
+	fmt.Println("Main: started")
 
 	go sayHello()
 

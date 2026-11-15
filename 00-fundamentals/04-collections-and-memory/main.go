@@ -112,7 +112,7 @@ func sharedBackingArray() {
 }
 
 func appendBehavior() {
-	// Capacity должен быть всегда больше length.
+	// Ёмкость слайса не меньше его длины: cap >= len.
 	base := make([]int, 3, 5)
 	base[0] = 10
 	base[1] = 20
@@ -259,7 +259,7 @@ func mapsBasics() {
 
 	fmt.Println("Initialized map:", initialized)
 
-	// Порядок итерации по мапе случайный.
+	// Порядок итерации по map не определён.
 	for key, value := range ages {
 		fmt.Println(key, value)
 	}
