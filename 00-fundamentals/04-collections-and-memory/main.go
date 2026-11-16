@@ -112,7 +112,7 @@ func sharedBackingArray() {
 }
 
 func appendBehavior() {
-	// Ёмкость слайса не меньше его длины: cap >= len.
+	// Capacity должен быть всегда больше length.
 	base := make([]int, 3, 5)
 	base[0] = 10
 	base[1] = 20
@@ -150,6 +150,13 @@ func appendBehavior() {
 
 	// Не полагайтесь на какой-то конкретный коэффициент увеличения вместимости.
 	// В реализации Go могут быть выбраны другие значения вместимости.
+}
+
+func cloneAndAppend(source []int, value int) []int {
+	result := make([]int, len(source)+1)
+	copy(result, source)
+	result[len(source)] = value
+	return result
 }
 
 func copyExample() {
@@ -259,7 +266,7 @@ func mapsBasics() {
 
 	fmt.Println("Initialized map:", initialized)
 
-	// Порядок итерации по map не определён.
+	// Порядок итерации по мапе случайный.
 	for key, value := range ages {
 		fmt.Println(key, value)
 	}

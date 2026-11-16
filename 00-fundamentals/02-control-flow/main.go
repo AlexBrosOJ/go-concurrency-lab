@@ -2,6 +2,19 @@ package main
 
 import "fmt"
 
+func grade(score int) string {
+	if score >= 90 {
+		return "A"
+	}
+	if score >= 75 {
+		return "B"
+	}
+	if score >= 60 {
+		return "C"
+	}
+	return "F"
+}
+
 func main() {
 	// 1. Условия
 
@@ -9,15 +22,7 @@ func main() {
 
 	score := 82
 
-	if score >= 90 {
-		fmt.Println("Grade: A")
-	} else if score >= 75 {
-		fmt.Println("Grade: B")
-	} else if score >= 60 {
-		fmt.Println("Grade: C")
-	} else {
-		fmt.Println("Grade: F")
-	}
+	fmt.Println("Grade:", grade(score))
 
 	// 2. Быстрые обьявления в if
 
@@ -123,7 +128,6 @@ func main() {
 	// 10. Range по слайсу
 
 	fmt.Println("\n=== Range over slice ===")
-
 	numbers := []int{10, 20, 30, 40}
 
 	for index, value := range numbers {
@@ -150,7 +154,7 @@ func main() {
 		fmt.Printf("%s: %d\n", name, age)
 	}
 
-	// Порядок итераций в map не определён
+	// Порядок итераций в map случайный
 
 	// 13. Range по строке
 

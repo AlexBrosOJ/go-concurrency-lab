@@ -19,16 +19,16 @@ func main() {
 	fmt.Println("Assigned values:")
 	fmt.Println(age, name, isDev)
 
-	//Краткое обьявление
+	//Краткое объявление
 
 	c := "City"
-	yearsOfExpirience := 5
+	yearsOfExperience := 5
 
-	fmt.Println(c, yearsOfExpirience)
+	fmt.Println(c, yearsOfExperience)
 
 	// Константы
 
-	const appName = "Go Conurrency Lab"
+	const appName = "Go Concurrency Lab"
 
 	fmt.Println("App:", appName)
 
