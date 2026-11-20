@@ -133,7 +133,7 @@ func appendBehavior() {
 	fmt.Println("Second resliced:", second[:4])
 
 	// Теперь выполним добавление за пределами доступной ёмкости.
-	small := make([]int, 3, 3)
+	small := make([]int, 3)
 	small[0] = 1
 	small[1] = 2
 	small[2] = 3
