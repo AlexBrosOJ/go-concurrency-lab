@@ -16,12 +16,16 @@
 
 | Раздел / урок | Статус | Проверки |
 |---|---|---|
-| **00. Основы языка** | Пять базовых уроков готовы | |
+| **00. Основы языка** | Девять уроков готовы | |
 | [01. Основы синтаксиса](00-fundamentals/01-language-basics/README.md) | Готов | Тестов нет |
 | [02. Управление выполнением](00-fundamentals/02-control-flow/README.md) | Готов | Границы диапазонов |
 | [03. Функции](00-fundamentals/03-functions/README.md) | Готов | Ошибки, параметры и состояние замыканий |
 | [04. Коллекции и память](00-fundamentals/04-collections-and-memory/README.md) | Готов | Независимость копий и базового массива |
 | [05. Структуры, указатели и методы](00-fundamentals/05-structs-and-methods/README.md) | Готов | Нулевое состояние, копирование и методы |
+| [06. Интерфейсы](00-fundamentals/06-interfaces/README.md) | Готов | Наборы методов, типизированный nil и io.Reader |
+| [07. Ошибки](00-fundamentals/07-errors/README.md) | Готов | Цепочки ошибок, границы ввода и recover |
+| [08. Дженерики](00-fundamentals/08-generics/README.md) | Готов | Ограничения типов, именованные слайсы и граничные случаи |
+| [09. Пакеты и модули](00-fundamentals/09-packages-and-modules/README.md) | Готов | Импорт internal и тестирование открытого API |
 | **01. Горутины** | Пять уроков готовы | |
 | [01. Базовая горутина](01-goroutines/01-basic-goroutine/README.md) | Готов | Тестов нет |
 | [02. Несколько горутин](01-goroutines/02-multiple-goroutines/README.md) | Готов | Тестов нет |
@@ -34,13 +38,16 @@
 | [03. Закрытие каналов и range](02-channels/03-close-and-range/README.md) | Готов | Конец потока, несколько производителей, ошибки close и таймауты |
 | [04. Select и таймауты](02-channels/04-select-and-timeouts/README.md) | Готов | Отправка, получение, таймауты и отмена блокирующей пересылки |
 | [05. nil-каналы и deadlocks](02-channels/05-nil-channels-and-deadlocks/README.md) | Готов | Отключение входов, сохранение значений и порядка потоков |
-| **03. Паттерны конкурентности** | В разработке | |
+| **03. Паттерны конкурентности** | Шесть уроков готовы | |
 | [01. Fan-in](03-concurrency-patterns/01-fan-in/README.md) | Готов | Граничные случаи и таймаут |
 | [02. Fan-out](03-concurrency-patterns/02-fan-out/README.md) | Готов | Граничные случаи и таймаут |
 | [03. Pipeline](03-concurrency-patterns/03-pipeline/README.md) | Готов | Порядок стадий, пустые потоки, отмена, дедлайн и ожидание завершения |
 | [04. Worker Pool](03-concurrency-patterns/04-worker-pool/README.md) | Готов | Предел конкурентности, ошибки задач, закрытие очереди и отмена |
 | [05. Ограничение параллелизма](03-concurrency-patterns/05-concurrency-limit/README.md) | Готов | Семафор, предел активной работы, отмена и дедлайн |
-| 04. Координация и отмена операций | Запланирован | |
+| [06. Сбор результатов](03-concurrency-patterns/06-collecting-results/README.md) | Готов | Индексы, порядок, ошибки и частичные результаты |
+| **04. Координация и отмена операций** | В разработке | |
+| [01. Основы context.Context](04-coordination-and-cancellation/01-context-basics/README.md) | Готов | Наследование отмены и метаданных, причина отмены |
+| [02. Отмена и дедлайны](04-coordination-and-cancellation/02-cancellation-and-deadlines/README.md) | Готов | Общий бюджет, родительский дедлайн и частичный результат |
 | 05. Синхронизация | Запланирован | |
 | 06. Практические примеры | Запланирован | |
 | 07. Внутреннее устройство Go | Запланирован | |
@@ -60,6 +67,10 @@
 - Функции.
 - Коллекции, строки и общая память.
 - Структуры, указатели и методы: копирование значений и изменение состояния.
+- [Интерфейсы](00-fundamentals/06-interfaces/README.md) — наборы методов, динамический тип и nil.
+- [Ошибки](00-fundamentals/07-errors/README.md) — оборачивание, проверка причины и локальный recover.
+- [Дженерики](00-fundamentals/08-generics/README.md) — параметры типов, вывод и ограничения.
+- [Пакеты и модули](00-fundamentals/09-packages-and-modules/README.md) — экспорт, internal и тесты из другого пакета.
 
 ### 01. Горутины
 
@@ -85,12 +96,12 @@
 - [Pipeline](03-concurrency-patterns/03-pipeline/README.md) — конвейерная обработка, обратное давление и отмена всех стадий.
 - [Worker Pool](03-concurrency-patterns/04-worker-pool/README.md) — фиксированное число обработчиков, очередь задач, результаты и отмена.
 - [Ограничение параллелизма](03-concurrency-patterns/05-concurrency-limit/README.md) — семафор, допуск до запуска и отменяемое ожидание.
-- Сбор результатов параллельных операций.
+- [Сбор результатов](03-concurrency-patterns/06-collecting-results/README.md) — потоковый и исходный порядок, ошибки и частичные результаты.
 
 ### 04. Координация и отмена операций
 
-- `context.Context`.
-- Отмена операций и установка дедлайнов.
+- [Основы context.Context](04-coordination-and-cancellation/01-context-basics/README.md) — дерево контекстов, отмена, причины и метаданные.
+- [Отмена и дедлайны](04-coordination-and-cancellation/02-cancellation-and-deadlines/README.md) — общий бюджет и наследование сроков.
 - Корректное завершение работы (graceful shutdown).
 - Реализация семафоров.
 
