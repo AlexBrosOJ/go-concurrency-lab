@@ -91,7 +91,7 @@ go test -race -timeout 10s ./03-concurrency-patterns/01-fan-in
 
 ### 4. Типичная ошибка
 
-Почему `fanIn(closed, nil)` может никогда не закрыть результат, даже если первый вход уже закрыт?
+Почему `fanIn(closed, nil)` не закроет выходной канал, хотя первый вход уже закрыт?
 
 <details>
 <summary>Показать ответ и объяснение</summary>

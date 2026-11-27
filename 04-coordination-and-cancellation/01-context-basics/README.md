@@ -141,7 +141,7 @@ Request ID after cancellation: request-42
 
 ### 2. Вывод кода
 
-Что вернут `child.Err()` и `context.Cause(child)`, если активного родителя отменить через `cancel(errors.New("клиент ушёл"))` из `WithCancelCause`?
+Пусть активный `child` создан через `context.WithCancel(parent)`, а `parent` — через `context.WithCancelCause`. Что вернут `child.Err()` и `context.Cause(child)` после вызова функции отмены родителя с `errors.New("клиент ушёл")`?
 
 <details>
 <summary>Показать ответ и объяснение</summary>
